@@ -4,10 +4,7 @@ from typing import List
 
 def get_input_data():
     n = int(input())
-    segments = []
-    for i in range(n):
-        a, b = map(int, input().split())
-        segments.append([a, b])
+    segments = [list(map(int, input().split())) for _ in range(n)]
     return n, segments
 
 
