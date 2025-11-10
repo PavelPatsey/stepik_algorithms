@@ -1,4 +1,5 @@
 import sys
+from typing import List
 
 
 def get_input_data():
@@ -8,8 +9,7 @@ def get_input_data():
     return n, weight, backpacks
 
 
-def main():
-    n, max_weight, backpacks = get_input_data()
+def get_max_cost(max_weight: int, backpacks: List):
     sorted_packs = sorted(backpacks, key=lambda x: x[0] / x[1], reverse=True)
     cur_cost = 0
     cur_weight = 0
@@ -25,7 +25,13 @@ def main():
             cur_cost += delta * ro
             cur_weight += delta
         i += 1
-    print(f"{cur_cost:.3f}")
+    return cur_cost
+
+
+def main():
+    n, max_weight, backpacks = get_input_data()
+    max_cost = get_max_cost(max_weight, backpacks)
+    print(f"{max_cost:.3f}")
 
 
 if __name__ == "__main__":
