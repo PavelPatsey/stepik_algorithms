@@ -18,7 +18,6 @@ def segment_contains_point(point: int, segment: List[int]) -> bool:
 
 def main():
     n, segments = get_input_data()
-
     segments = sorted(segments, key=itemgetter(1))
     res = []
     s = 0
@@ -27,7 +26,6 @@ def main():
         res.append(point)
         while s < len(segments) and segment_contains_point(point, segments[s]):
             s += 1
-
     print(len(res))
     print(*res)
 
