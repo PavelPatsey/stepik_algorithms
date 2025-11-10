@@ -28,7 +28,7 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    # main()
 
     import sys
     from io import StringIO
