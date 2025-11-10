@@ -1,16 +1,13 @@
 def main():
     n = int(input())
-    remainder = n
+    a = 1
+    b = n - a
     res = []
-    while True:
-        pretender = res[-1] + 1 if res else 1
-        a, b = pretender, remainder - pretender
-        if a < b:
-            res.append(a)
-            remainder = b
-        else:
-            res.append(remainder)
-            break
+    while a < b:
+        res.append(a)
+        a = a + 1
+        b = b - a
+    res.append(a + b)
     print(len(res))
     print(*res)
 
