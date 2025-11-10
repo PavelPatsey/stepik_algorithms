@@ -1,6 +1,10 @@
+import sys
+
+
 def get_input_data():
-    n, weight = map(int, input().split())
-    backpacks = [list(map(int, input().split())) for _ in range(n)]
+    data = (line for line in sys.stdin)
+    n, weight = map(int, next(data).split())
+    backpacks = [tuple(map(int, line.split())) for line in data]
     return n, weight, backpacks
 
 
@@ -27,7 +31,6 @@ def main():
 if __name__ == "__main__":
     # main()
 
-    import sys
     from io import StringIO
 
     print("test 1")
