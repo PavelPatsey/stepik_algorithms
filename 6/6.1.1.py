@@ -19,18 +19,18 @@ def binary_search(k: int, array: List[int]) -> int:
         if k < array[m]:
             r = m - 1
         elif k > array[m]:
-            l = l + 1
+            l = m + 1
     return -1
 
 
 def main():
     array, ks = input_data()
-    res = [binary_search(ks[i], array) for i in range(1, len(ks))]
-    print(*res)
+    for i in range(1, len(ks)):
+        print(binary_search(ks[i], array), end=" ")
 
 
 if __name__ == "__main__":
-    main()
+    # main()
 
     assert binary_search(8, [5, 1, 5, 8, 12, 13]) == 3
 
